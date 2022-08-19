@@ -1,6 +1,5 @@
 
 import { AiOutlinePlayCircle } from 'react-icons/ai'
-import React, { useEffect, useState } from 'react'
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 

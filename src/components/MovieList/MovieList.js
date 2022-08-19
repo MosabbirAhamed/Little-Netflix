@@ -37,19 +37,21 @@ function MovieList({ title, filter, carousel = false, speed = 1000 }) {
 
 
 
-  const getMovies = async () => {
-    setLoding(true);
-    const response = await fetch(`https://yts.mx/api/v2/list_movies.json?${filter}`).then(res => res.json());
-  
-    setTimeout(() => {
-      setMovies(response.data.movies);
 
-      setLoding(false);
-    }, 2000);
-  }
 
   useEffect(() => {
-    getMovies();
+    (
+      async () => {
+        setLoding(true);
+        const response = await fetch(`https://yts.mx/api/v2/list_movies.json?${filter}`).then(res => res.json());
+      
+        setTimeout(() => {
+          setMovies(response.data.movies);
+    
+          setLoding(false);
+        }, 2000);
+      }
+    )();
   }, []);
 
 
@@ -102,7 +104,7 @@ function MovieList({ title, filter, carousel = false, speed = 1000 }) {
             <span className="text-gray-400 block">{details?.year}</span>
             <span className="text-white block">{details?.language.toUpperCase()}</span>
           </div>
-          <a className='text-white bg-red-600 px-2 py-1 text-lg rounded-lg'target="_blank" rel="noopener" href={details?.url}>Download</a>
+          <a className='text-white bg-red-600 px-2 py-1 text-lg rounded-lg' target="_blank" rel="noreferrer noopener" href={details?.url}>Download</a>
           </div>
         </div>
       )};

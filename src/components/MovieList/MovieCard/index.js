@@ -1,9 +1,7 @@
-import React, { useEffect ,useState } from 'react'
 import {AiFillStar} from 'react-icons/ai'
 
 function MovieCard({medium_cover_image = "https://thumbs.dreamstime.com/b/movie-text-blue-grungy-vintage-stamp-movie-text-blue-grungy-vintage-rectangle-stamp-212480140.jpg", title_long, rating, year, onClick}) {
 
-console.log(medium_cover_image)
   return (
     <div onClick={onClick} className="max-w-44 bg-slate-700 mr-4 mb-3 p-2 rounded-md hover:-translate-y-1 transition-all duration-100 cursor-pointer">
         <img className="rounded-md" src={medium_cover_image} alt="Cover" />
