@@ -52,7 +52,7 @@ function MovieList({ title, filter, carousel = false, speed = 1000 }) {
         }, 2000);
       }
     )();
-  }, []);
+  }, [filter]);
 
 
 
